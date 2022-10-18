@@ -1,0 +1,9 @@
+a("body").on("click","#example-top",function(b){new Noty({type:"notification",layout:"top",text:"Hey this is an example notification.",closeWith:["click","button"],animation:{open:"animated bounceInDown",close:"animated bounceOutUp"}}).show()});
+
+
+postmaster@sbhaa-buet.net jqU)=y7_*WTi
+
+spartkpost d28db178c43a68e4e1e7347c586a565dfbe3c11a
+
+
+adminsbh_xatta hp$CsTkIgNcK
