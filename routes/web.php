@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -102,4 +105,4 @@ Route::get('order/{order_id}','HomeController@getorderdata')->name('getorderdata
 
 //test
 Route::get('testpending','TestController@allPendingTrans');
-Route::get('allmail','TestController@getALlInfo');
+Route::get('allmail', 'TestController@getALlInfo');
