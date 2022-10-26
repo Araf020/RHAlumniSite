@@ -112,7 +112,7 @@ class RegistrationFormController extends Controller
             $reg_data->save();
 
             Session::put('payment_values.tran_id', $reg_data->order_id);
-            $this->saveQrCode($order_id);
+            // $this->saveQrCode($order_id);
 
         //return $reg_data;
         return redirect(route('pay'));
@@ -173,7 +173,7 @@ class RegistrationFormController extends Controller
                 $reg_data->save();
 
                 Session::put('payment_values.tran_id', $reg_data->order_id);
-                $this->saveQrCode($order_id);
+                // $this->saveQrCode($order_id);
                 $this->sendBankInfo($reg_data);
                 // $this->sendBankSms($reg_data);
 
