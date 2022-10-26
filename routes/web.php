@@ -1,6 +1,8 @@
 <?php
 
+use App\Mail\OrderShipped;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
@@ -133,4 +135,9 @@ Route::get('call', function () {
     }
 
     return $call . ' not success';
+});
+
+
+Route::get('testmail', function () {
+    Mail::to('monzurul.ce.buet@gmail.com')->send(new OrderShipped());
 });

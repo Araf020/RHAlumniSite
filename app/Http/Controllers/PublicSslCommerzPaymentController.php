@@ -102,8 +102,7 @@ class PublicSslCommerzPaymentController extends Controller
         #End to received these value from session. which was saved in index function.
 
         #Check order status in order tabel against the transaction id or order id.
-        $order_detials = DB::table('registration_forms')
-            ->where('order_id', $tran_id)
+        $order_detials = RegistrationForm::where('order_id', $tran_id)
         ->select('order_id', 'order_status', 'currency', 'total_amount')->get()->first();
 
 
@@ -205,7 +204,7 @@ class PublicSslCommerzPaymentController extends Controller
 
             if ($order_details->order_status == 'Pending') {
                 $sslc = new SSLCommerz();
-                $validation = $sslc->orderValidate($tran_id, $order_details->total_amount, $order_details->currency, $request->all());
+                $$validation = $sslc->orderValidate($request->all(), $tran_id, $order_detials->total_amount, $order_detials->currency);
                 if ($validation == TRUE) {
                     /*
                         That means IPN worked. Here you need to update order status
