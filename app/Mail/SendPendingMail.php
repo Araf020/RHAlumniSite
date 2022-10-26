@@ -30,7 +30,7 @@ class SendPendingMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Payment Not Complete')
+        return $this->subject('[SBHAA] Payment Not Complete')
                     ->replyTo('sbhaa.buet@gmail.com')
                     ->view('email.paymentpending');
     }

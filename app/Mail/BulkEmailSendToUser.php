@@ -30,10 +30,10 @@ class BulkEmailSendToUser extends Mailable
      */
     public function build()
     {
-        return $this->subject('SBHAA Notice')
+        return $this->subject('[SBHAA] SBHAA Notice')
                     ->replyTo('sbhaa.buet@gmail.com')
                     ->view('email.bulkemail');
     }
 
-    
+
 }

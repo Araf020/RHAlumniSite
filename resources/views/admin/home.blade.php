@@ -89,7 +89,7 @@
 	      <div class="inner">
 	        <h3>{{ $_14_lun }}</h3>
 
-	        <p>14 FEB Lunch</p>
+	        <p>Lunch</p>
 	      </div>
 	      <div class="icon">
 	        <i class="ion ion-bag"></i>
@@ -105,7 +105,7 @@
 	      <div class="inner">
 	        <h3>{{ $_14_din }}</h3>
 
-	        <p>14 FEB Dinner</p>
+	        <p>Dinner</p>
 	      </div>
 	      <div class="icon">
 	        <i class="ion ion-bag"></i>
@@ -116,7 +116,7 @@
 	  <!-- ./col -->
 
 
-	  <div class="col-lg-3 col-xs-6">
+	  {{-- <div class="col-lg-3 col-xs-6">
 	    <!-- small box -->
 	    <div class="small-box bg-aqua">
 	      <div class="inner">
@@ -146,7 +146,7 @@
 	      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 	    </div>
 	  </div>
-	  <!-- ./col -->
+	  <!-- ./col --> --}}
 
 	  <div class="col-lg-3 col-xs-6">
 	    <!-- small box -->
@@ -154,7 +154,7 @@
 	      <div class="inner">
 	        <h3>{{ $_15_dri }}</h3>
 
-	        <p>15 FEB Driver Dinner</p>
+	        <p>Driver Dinner</p>
 	      </div>
 	      <div class="icon">
 	        <i class="ion ion-bag"></i>

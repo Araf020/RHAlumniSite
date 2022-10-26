@@ -53,10 +53,10 @@
 			<div class="col-12 col-sm-10 col-md-6 mx-auto">
 				<div class="main_message">
 					<p>Participation Details</p>
-					<p>14<sup>th</sup> Feb Lunch: <span>{{ $data->d1la }}</span></p>
-					<p>14<sup>th</sup> Feb Dinner: <span>{{ $data->d1da }}</span></p>
-					<p>15<sup>th</sup> Feb Lunch: <span>{{ $data->d2la }}</span></p>
-					<p>15<sup>th</sup> Feb Dinner: <span>{{ $data->d2da }}</span></p>
+					<p>Lunch: <span>{{ $data->d1la }}</span></p>
+					<p>Dinner: <span>{{ $data->d1da }}</span></p>
+					{{-- <p>15<sup>th</sup> Feb Lunch: <span>{{ $data->d2la }}</span></p>
+					<p>15<sup>th</sup> Feb Dinner: <span>{{ $data->d2da }}</span></p> --}}
 					<p>Driver's Dinner: <span>{{ $data->driver }}</span></p>
 					<p>T Shirt Size: <span>{{ $data->t_shirt }}</span></p>
 				</div>
@@ -81,7 +81,8 @@
 		<div class="row">
 			<div class="col-12 col-sm-10 col-md-6 mx-auto">
 				<div class="credential text-sm-center bg_w extra_message">
-					<img src="{{URL::asset('/storage/qrcodes/'.$data->order_id.'.png')}}">
+					{{-- <img src="{{URL::asset('/storage/qrcodes/'.$data->order_id.'.png')}}"> --}}
+					<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{ $data->order_id }}">
 				</div>
 			</div>
 		</div>

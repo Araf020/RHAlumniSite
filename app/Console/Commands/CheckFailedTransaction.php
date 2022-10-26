@@ -47,12 +47,12 @@ class CheckFailedTransaction extends Command
             $client = new GuzzleHttp\Client();
             $res = $client->get('https://securepay.sslcommerz.com/validator/api/merchantTransIDvalidationAPI.php?tran_id='.$Single_failed_transaction->order_id.'&store_id=sbhaabuetlive&store_passwd=5BFE81D9A12B517209&format=json');
             $response =  json_decode($res->getBody(), true);
-            
+
             foreach ($response['element'] as $single_element) {
                 // dd($single_element);
                 if ($single_element['status'] == 'VALID' || $single_element['status'] == 'VALIDATED') {
                     $this->sendConfirmationMail($Single_failed_transaction);
-                    $this->sendSms($Single_failed_transaction);
+                    // $this->sendSms($Single_failed_transaction);
                     RegistrationForm::where('order_id',$Single_failed_transaction->order_id)->update(['order_status'=>'Processing']);
                 }
             }
@@ -79,13 +79,13 @@ class CheckFailedTransaction extends Command
 
         $client = new GuzzleHttp\Client();
         $res = $client->get('http://166.62.16.132/A_SMS/smssend.php?phone='.$this->getDigitedNumber($data->mobile_1).'&text='.$message.'&user=sbhaa&password=sbhsms2019');
-        //return $res->getStatusCode(); 
+        //return $res->getStatusCode();
     }
 
     public function getDigitedNumber($mobile)
     {
         if (strlen($mobile) > 11) {
-            if (substr($mobile,0,3) == '+88') 
+            if (substr($mobile,0,3) == '+88')
             {
                 return substr($mobile,-11);
             }
@@ -96,7 +96,7 @@ class CheckFailedTransaction extends Command
             }
         }
         return $mobile;
-        
+
     }
 
 }

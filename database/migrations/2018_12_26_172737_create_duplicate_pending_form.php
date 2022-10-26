@@ -42,8 +42,8 @@ class CreateDuplicatePendingForm extends Migration
             $table->text('t_shirt');
             $table->integer('d1la');
             $table->integer('d1da');
-            $table->integer('d2la');
-            $table->integer('d2da');
+            $table->integer('d2la')->nullable();
+            $table->integer('d2da')->nullable();
             $table->integer('driver');
             $table->decimal('total_amount', 8, 2);
             $table->text('payment_method');

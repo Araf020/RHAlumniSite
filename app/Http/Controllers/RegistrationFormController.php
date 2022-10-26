@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use File;
+use GuzzleHttp;
+use App\TempRegForm;
 use App\BankStatement;
-use App\Mail\BankPaymentInfo;
 use App\RegistrationForm;
 use App\SaveChangesByAdmin;
-use App\TempRegForm;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Mail\BankPaymentInfo;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
-use GuzzleHttp;
 
 class RegistrationFormController extends Controller
 {
@@ -24,7 +24,7 @@ class RegistrationFormController extends Controller
         // $this->middleware('auth')->except(['save','unique_order_id','directReg','tempRegForm','checkId','updateFormStatus','checkPaymentStatus','deposite','payment_status','getStatusDataById','getDigitedNumber','checkPhoneNo','saveQrCode']);
         $this->middleware('auth')->only(['edit','update']);
     }
-    
+
     public function save(Request $request)
     {
     	//return $request->all();
@@ -34,7 +34,7 @@ class RegistrationFormController extends Controller
         }else{
             return $this->tempRegForm($request);
         }
-        
+
     }
 
 
@@ -114,8 +114,8 @@ class RegistrationFormController extends Controller
             Session::put('payment_values.tran_id', $reg_data->order_id);
             $this->saveQrCode($order_id);
 
-            //return $reg_data;
-            return Redirect(Route('pay'));
+        //return $reg_data;
+        return redirect(route('pay'));
 
     }
 
@@ -175,7 +175,7 @@ class RegistrationFormController extends Controller
                 Session::put('payment_values.tran_id', $reg_data->order_id);
                 $this->saveQrCode($order_id);
                 $this->sendBankInfo($reg_data);
-                $this->sendBankSms($reg_data);
+                // $this->sendBankSms($reg_data);
 
                 //return $reg_data;
                 return redirect(route('deposite',$reg_data->order_id));
@@ -310,7 +310,7 @@ class RegistrationFormController extends Controller
                 if ($checkAlreadyExistBankInfo > 0) {
                     return ['message'=>'You have already submitted your bank payment statement'];
                 }
-                
+
             }
         }
 
@@ -331,7 +331,7 @@ class RegistrationFormController extends Controller
         $bankStatement->save();
 
 
-        
+
         return ['message'=>'Your payment status has been updated and will be verified by an admin'];
     }
 
@@ -380,7 +380,7 @@ class RegistrationFormController extends Controller
     public function getDigitedNumber($mobile)
     {
         if (strlen($mobile) > 11) {
-            if (substr($mobile,0,3) == '+88') 
+            if (substr($mobile, 0, 3) == '+88')
             {
                 return substr($mobile,-11);
             }
@@ -391,12 +391,12 @@ class RegistrationFormController extends Controller
             }
         }
         return $mobile;
-        
+
     }
 
     public function saveChanges($new_data,$old_data)
     {
-        
+
         $changed_old_value =  array_intersect_key($old_data, $new_data);
         //return $new_data;
 
@@ -407,7 +407,7 @@ class RegistrationFormController extends Controller
         $record_changes->new_data   = json_encode($new_data);
         $record_changes->comment    = 'Ignor Amount changes if no participation details has changed';
         $record_changes->save();
-        
+
     }
 
 
@@ -418,6 +418,7 @@ class RegistrationFormController extends Controller
         $image = str_replace(' ', '+', $image);
         $imageName = $order_id.'.'.'png';
         \File::put(storage_path(). '/app/public/qrcodes/' . $imageName, base64_decode($image));
+        // Storage::put($article->slug . 'jpg', $request->file('file_field'));
     }
 
     public function sendBankInfo($data){
@@ -435,9 +436,6 @@ class RegistrationFormController extends Controller
 
         $client = new GuzzleHttp\Client();
         $res = $client->get('http://166.62.16.132/A_SMS/smssend.php?phone='.$this->getDigitedNumber($data->mobile_1).'&text='.$message.'&user=sbhaa&password=sbhsms2019');
-        //return $res->getStatusCode(); 
+        //return $res->getStatusCode();
     }
-
-
-
 }

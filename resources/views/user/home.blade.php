@@ -195,7 +195,7 @@
                     <div class="event_card">
 
                         <ul class="list-group">
-                            <li class="list-group-item header_date">Day 1, Feb 14 2019</li>
+                            <li class="list-group-item header_date">09 December 2022</li>
                             <li class="list-group-item ">
                                 <span class="title">Reunion souvenir & cupon distribution, Spot registration</span> at
                                 <span>Hall Compound</span>
@@ -314,12 +314,12 @@
                 <div class="col-lg-7">
                     <form class="contact_form" action="#" method="POST" id="contactForm">
                         {{ csrf_field() }}
-                        <input type="text" name="name" id="name" placeholder="Your name">
+                        <input type="text" name="name" id="name" placeholder="Your name" required>
                         <span id="nameError" class="label label-danger"></span>
-                        <input type="text" name="email" id="email" placeholder="Your email">
+                        <input type="text" name="email" id="email" placeholder="Your email" required>
                         <span id="emailError" class="label label-danger"></span>
-                        <input type="text" name="subject" id="subject" placeholder="Subject">
-                        <textarea placeholder="Message" id="message" name="message"></textarea>
+                        <input type="text" name="subject" id="subject" placeholder="Subject" required>
+                        <textarea placeholder="Message" id="message" name="message" required></textarea>
                         <span id="messageError" class="label label-danger"></span>
                         <input type="submit" name="submit" id="submit" value="Send Message" class="sbh_btn"
                             disabled="">

@@ -30,7 +30,7 @@ class sendContactMail extends Mailable
     public function build()
     {
 
-        return $this->subject('New Contact Submission')
+        return $this->subject('[SBHAA] New Contact Submission')
                     ->replyTo($this->data['email'])
                     ->view('email.contactInfo');
     }

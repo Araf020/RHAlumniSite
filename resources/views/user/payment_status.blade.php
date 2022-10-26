@@ -69,16 +69,16 @@
 			  	  		<p>Spouse Profession: <strong><span id="spouse_profession"></span></strong></p>
 			  	  		<hr>
 
-			  	  		<p>14th Feb Lunch: <strong><span id="d1la"></span></strong></p>
-			  	  		<p>14th Feb Dinner: <strong><span id="d1da"></span></strong></p>
-			  	  		<p>15th Feb Lunch: <strong><span id="d2la"></span></strong></p>
-			  	  		<p>15th Feb Dinner: <strong><span id="d2da"></span></strong></p>
-			  	  		<p>15th Feb Driver's Dinner: <strong><span id="driver"></span></strong></p>
+			  	  		<p>Lunch: <strong><span id="d1la"></span></strong></p>
+			  	  		<p>Dinner: <strong><span id="d1da"></span></strong></p>
+			  	  		{{-- <p>15th Feb Lunch: <strong><span id="d2la"></span></strong></p>
+			  	  		<p>15th Feb Dinner: <strong><span id="d2da"></span></strong></p> --}}
+			  	  		<p>Driver's Dinner: <strong><span id="driver"></span></strong></p>
 			  	  		<p>Total amount: <strong><span id="total_amount"></span></strong></p>
 			  	  		<p>payment Method: <strong><span id="payment_method"></span></strong></p>
 			  	  		<p>T Shirt Size: <strong><span id="t_shirt"></span></strong></p>
 			  	  		<p><img src="" id="image" height="100" width="auto"></p>
-			  	  		
+
 
 
 			  	  		<div id="bank_statement" style="display: none;">
@@ -93,7 +93,7 @@
 
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 
@@ -183,21 +183,21 @@ $(document).ready(function(){
 	            	$('#spouse_profession').html(data.spouse_profession);
 	            	$('#d1la').html(data.d1la);
 	            	$('#d1da').html(data.d1da);
-	            	$('#d2la').html(data.d2la);
-	            	$('#d2da').html(data.d2da);
+	            	// $('#d2la').html(data.d2la);
+	            	// $('#d2da').html(data.d2da);
 	            	$('#driver').html(data.driver);
 	            	$('#total_amount').html(data.total_amount);
 	            	$('#payment_method').html(data.payment_method);
 	            	$('#t_shirt').html(data.t_shirt);
-	            	$('#image').attr('src','storage/images/'+data.image);
+	            	$('#image').attr('src','/storage/images/'+data.image);
 	            	$('#user_datas').show(500);
-	            	
+
 	            }
-	          
+
 	        }
 	    });
 
-	
+
 	});
 
 

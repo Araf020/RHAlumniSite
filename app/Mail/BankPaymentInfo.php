@@ -29,7 +29,7 @@ class BankPaymentInfo extends Mailable
      */
     public function build()
     {
-        return $this->subject('Bank Payment Info')
+        return $this->subject('[SBHAA] Bank Payment Info')
                     ->replyTo('sbhaa.buet@gmail.com')
                     ->view('email.bankpaymentinfo');
     }

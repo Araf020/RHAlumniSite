@@ -14,7 +14,7 @@ class PagesController extends Controller
     }
     public function register()
     {
-        return view('user.register_backup');
+        return view('user.register');
     }
 
     public function save(Request $request)

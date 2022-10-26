@@ -48,7 +48,7 @@ class DeletePendingTransaction extends Command
         foreach ($datas as $data) {
             $this->clone($data);
             $this->sendPendingMail($data);
-            $this->sendSms($data);
+            // $this->sendSms($data);
             $data->delete();
         }
     }
@@ -74,13 +74,13 @@ class DeletePendingTransaction extends Command
 
         $client = new GuzzleHttp\Client();
         $res = $client->get('http://166.62.16.132/A_SMS/smssend.php?phone='.$this->getDigitedNumber($data->mobile_1).'&text='.$message.'&user=sbhaa&password=sbhsms2019');
-        //return $res->getStatusCode(); 
+        //return $res->getStatusCode();
     }
 
     public function getDigitedNumber($mobile)
     {
         if (strlen($mobile) > 11) {
-            if (substr($mobile,0,3) == '+88') 
+            if (substr($mobile, 0, 3) == '+88')
             {
                 return substr($mobile,-11);
             }
@@ -91,6 +91,6 @@ class DeletePendingTransaction extends Command
             }
         }
         return $mobile;
-        
+
     }
 }
