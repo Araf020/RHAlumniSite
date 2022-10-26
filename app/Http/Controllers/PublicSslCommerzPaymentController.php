@@ -160,11 +160,11 @@ class PublicSslCommerzPaymentController extends Controller
             $update_product = DB::table('registration_forms')
             ->where('order_id', $tran_id)
             ->update(['order_status' => 'Failed']);
-            echo "Transaction is Falied";
+            echo "Transaction is Falied<br> goto <a href=" . route('index') . ">Home</a>";
         } else if ($order_detials->order_status == 'Processing' || $order_detials->order_status == 'Complete') {
             echo "Transaction is already Successful <br> goto <a href=" . route('index') . ">Home</a>";
         } else {
-            echo "Transaction is Invalid";
+            echo "Transaction is Invalid<br> goto <a href=" . route('index') . ">Home</a>";
         }
     }
 
@@ -181,11 +181,11 @@ class PublicSslCommerzPaymentController extends Controller
             $update_product = DB::table('registration_forms')
             ->where('order_id', $tran_id)
             ->update(['order_status' => 'Canceled']);
-            echo "Transaction is Cancel";
+            echo "Transaction is Cancel<br> goto <a href=" . route('index') . ">Home</a>";
         } else if ($order_detials->order_status == 'Processing' || $order_detials->order_status == 'Complete') {
             echo "Transaction is already Successful <br> goto <a href=" . route('index') . ">Home</a>";
         } else {
-            echo "Transaction is Invalid";
+            echo "Transaction is Invalid<br> goto <a href=" . route('index') . ">Home</a>";
         }
     }
     public function ipn(Request $request)
