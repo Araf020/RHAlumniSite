@@ -97,13 +97,14 @@ class PublicSslCommerzPaymentController extends Controller
         $sslc = new SSLCommerz();
         #Start to received these value from session. which was saved in index function.
         //$tran_id = $_SESSION['payment_values']['tran_id'];
-        $tran_id = Session::get('payment_values.tran_id');
+        $tran_id = $request->input('tran_id');
+        // $tran_id = Session::get('payment_values.tran_id');
         #End to received these value from session. which was saved in index function.
 
         #Check order status in order tabel against the transaction id or order id.
         $order_detials = DB::table('registration_forms')
             ->where('order_id', $tran_id)
-        ->select('order_id', 'order_status', 'currency', 'total_amount')->first();
+        ->select('order_id', 'order_status', 'currency', 'total_amount')->get()->first();
 
 
         $sslc = new SslCommerzNotification();

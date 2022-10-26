@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use File;
 use GuzzleHttp;
 use App\TempRegForm;
 use App\BankStatement;
@@ -12,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Mail\BankPaymentInfo;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
@@ -417,7 +417,7 @@ class RegistrationFormController extends Controller
         //$image = str_replace('data:image/png;base64,', '', $image);
         $image = str_replace(' ', '+', $image);
         $imageName = $order_id.'.'.'png';
-        \File::put(storage_path(). '/app/public/qrcodes/' . $imageName, base64_decode($image));
+        File::put(storage_path() . '/app/public/qrcodes/' . $imageName, base64_decode($image));
         // Storage::put($article->slug . 'jpg', $request->file('file_field'));
     }
 
