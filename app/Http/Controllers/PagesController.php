@@ -14,7 +14,7 @@ class PagesController extends Controller
     }
     public function register()
     {
-        return view('user.register');
+        return view('user.register_backup');
     }
 
     public function save(Request $request)
@@ -38,7 +38,7 @@ class PagesController extends Controller
         $data['message'] = $request->message;
 
 
-        
+
 
         Mail::to('sbhaa.buet@gmail.com')->send(new sendContactMail($data));
 
@@ -46,8 +46,8 @@ class PagesController extends Controller
             return 0;
         }
         return 1;
-   
 
-        
+
+
     }
 }
