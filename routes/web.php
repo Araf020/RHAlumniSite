@@ -86,11 +86,11 @@ Route::post('validateStudentId','CurrentStudentController@validateStudentId')->n
 Route::post('validateEmail','CurrentStudentController@validateEmail')->name('validateEmail');
 Route::post('validatePhone','CurrentStudentController@validatePhone')->name('validatePhone');
 
-Route::get('/pay', 'PublicSslCommerzPaymentController@index')->name('pay');
-Route::POST('/success', 'PublicSslCommerzPaymentController@success');
-Route::POST('/fail', 'PublicSslCommerzPaymentController@fail');
-Route::POST('/cancel', 'PublicSslCommerzPaymentController@cancel');
-Route::POST('/ipn', 'PublicSslCommerzPaymentController@ipn');
+// Route::get('/pay', 'PublicSslCommerzPaymentController@index')->name('pay');
+// Route::POST('/success', 'PublicSslCommerzPaymentController@success');
+// Route::POST('/fail', 'PublicSslCommerzPaymentController@fail');
+// Route::POST('/cancel', 'PublicSslCommerzPaymentController@cancel');
+// Route::POST('/ipn', 'PublicSslCommerzPaymentController@ipn');
 
 Route::get('sset','HomeController@session');
 Route::get('mail','HomeController@mail');
@@ -106,3 +106,17 @@ Route::get('order/{order_id}','HomeController@getorderdata')->name('getorderdata
 //test
 Route::get('testpending','TestController@allPendingTrans');
 Route::get('allmail', 'TestController@getALlInfo');
+
+// SSLCOMMERZ Start
+Route::get('/example1', 'SslCommerzPaymentController@exampleEasyCheckout');
+Route::get('/example2', 'SslCommerzPaymentController@exampleHostedCheckout');
+
+Route::post('/pay', 'SslCommerzPaymentController@index');
+Route::post('/pay-via-ajax', 'SslCommerzPaymentController@payViaAjax');
+
+Route::post('/success', 'SslCommerzPaymentController@success');
+Route::post('/fail', 'SslCommerzPaymentController@fail');
+Route::post('/cancel', 'SslCommerzPaymentController@cancel');
+
+Route::post('/ipn', 'SslCommerzPaymentController@ipn');
+//SSLCOMMERZ END
