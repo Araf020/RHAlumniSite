@@ -2,12 +2,13 @@
 namespace App\Http\Controllers;
 
 //define("SSLCZ_STORE_ID", "shere5bee8ca275903");
-define("SSLCZ_STORE_ID", "sbhaabuetlive");
+define("SSLCZ_STORE_ID", "buet63f1e22de4293");
 //define("SSLCZ_STORE_PASSWD", "qwerty");
-define("SSLCZ_STORE_PASSWD", "5BFE81D9A12B517209");
+define("SSLCZ_STORE_PASSWD", "buet63f1e22de4293@ssl");
 
 # IF SANDBOX TRUE, THEN IT WILL CONNECT WITH SSLCOMMERZ SANDBOX (TEST) SYSTEM
-define("SSLCZ_IS_SANDBOX", false);
+// define("SSLCZ_IS_SANDBOX", true);
+define("SSLCZ_IS_SANDBOX", true);
 
 # IF BROWSE FROM LOCAL HOST, KEEP true
 define("SSLCZ_IS_LOCAL_HOST", true);

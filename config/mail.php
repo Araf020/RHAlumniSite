@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'postmaster@sbhaa-buet.net'),
-        'name' => env('MAIL_FROM_NAME', 'SBH Alumni Association'),
+        'address' => env('MAIL_FROM_ADDRESS', 'rh.reunion2023@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'RH Alumni Association'),
     ],
 
     /*

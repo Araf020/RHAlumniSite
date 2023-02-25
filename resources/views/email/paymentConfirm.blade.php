@@ -13,7 +13,7 @@
 		<div class="row">
 			<div class="col-12 col-sm-10 col-md-6 mx-auto">
 				<div class="header">
-					<h3><a href="{{ route('index') }}">SBH<span>AA</span></a></h3>
+					<h3><a href="{{ route('index') }}">RH<span>AA</span></a></h3>
 				</div>
 			</div>
 		</div>
@@ -53,11 +53,13 @@
 			<div class="col-12 col-sm-10 col-md-6 mx-auto">
 				<div class="main_message">
 					<p>Participation Details</p>
-					<p>Lunch: <span>{{ $data->d1la }}</span></p>
-					<p>Dinner: <span>{{ $data->d1da }}</span></p>
-					{{-- <p>15<sup>th</sup> Feb Lunch: <span>{{ $data->d2la }}</span></p>
-					<p>15<sup>th</sup> Feb Dinner: <span>{{ $data->d2da }}</span></p> --}}
-					<p>Driver's Dinner: <span>{{ $data->driver }}</span></p>
+					<!-- <p>Lunch: <span>{{ $data->d1la }}</span></p> -->
+					<p>Dinner: <span>1</span></p>
+					<p>Note: If you paid 1300, then your driver dinner is included.</p>
+					<!-- {{-- <p>15<sup>th</sup> Feb Lunch: <span>{{ $data->d2la }}</span></p> -->
+					<!-- <p>15<sup>th</sup> Feb Dinner: <span>{{ $data->d2da }}</span></p> --}} -->
+					
+					<!-- <p>Driver's Dinner: <span>{{ $data->driver }}</span></p> -->
 					<p>T Shirt Size: <span>{{ $data->t_shirt }}</span></p>
 				</div>
 			</div>
@@ -67,10 +69,10 @@
 		<div class="row">
 			<div class="col-12 col-sm-10 col-md-6 mx-auto">
 				<div class="main_message last">
-					<p>If you have any problem or query, then send an email to <span>sbhaa.buet@gmail.com</span> or just reply to this email. We are always happy to help you out.
+					<p>If you have any problem or query, then send an email to <span>rh.reunion2023@gmail.com</span> or just reply to this email. We are always happy to help you out.
 					<br>
 					<p>Have a good day.</p>
-					<p>SBH Alumni Association Registration Team</p>
+					<p>RH Alumni Association Registration Team</p>
 				</div>
 			</div>
 		</div>

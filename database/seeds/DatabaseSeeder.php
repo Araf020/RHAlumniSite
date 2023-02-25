@@ -2,6 +2,18 @@
 
 use App\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+// import Factory;
+// use Illuminate\Database\Eloquent\Factories\Factory;
+// use Illuminate\Database\Eloquent\ModelFactory;
+// use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+
+// use Illuminate\Support\Facades\Factory;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,8 +24,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // create 1 user
+        // my lara version 8.68.0
 
-        factory(User::class, 1)->create();
+        
+        // $this->call(UsersTableSeeder::class);
+        // factory(User::class, 1)->create();
+        // Factory::create(User::class, 1);
+        // Factory::create(User::class, 1);
+        // User::factory()->create();
+        // ModelFactory::create(User::class);
+        // Factory::create(User::class);
+
+
+        // 
+        DB::table('users')->insert([
+            'name' => Str::random(10),
+            'email' => Str::random(10).'@gmail.com',
+            'password' => Hash::make('password'),
+        ]);
     }
 }

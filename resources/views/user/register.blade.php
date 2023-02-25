@@ -36,9 +36,9 @@
             <div class="row">
                 <div class="col-lg-7 mx-auto">
                     <p>*All fields are required if not mentioned otherwise.</p>
-                    <p>*The informations will be used to build <strong>SBH Alumni Association Database</strong></p>
+                    <p>*The informations will be used to build <strong>RH Alumni Association Database</strong></p>
                     <p>*Download example filled form <a target="_blank"
-                            href="https://drive.google.com/file/d/1aOR1TI3DHVSC9G-fpKZFkmUDhz2RCYkf/view?usp=sharing">FROM
+                            href="https://drive.google.com/file/d/1ouKfbiYt_Or-TbpTrQuOX83s8ahVskRE/view?usp=share_link">FROM
                             HERE</a>.</p>
                 </div>
             </div>
@@ -86,9 +86,9 @@
                         <div class="form-row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="session">Exam Session(optional)</label>
-                                    <input type="text" class="form-control" id="session" placeholder="2015-16"
-                                        name="exam_session">
+                                    <label for="session">Entrance Batch(optional)</label>
+                                    <input type="text" class="form-control" id="session" placeholder="2010"
+                                        name="entrance_batch">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -140,7 +140,7 @@
                                 <select class="form-control" id="gender" name="gender" required="">
                                     <option value="">Select</option>
                                     <option value="male">Male</option>
-                                    <option value="female">Female</option>
+                                    <!-- <option value="female">Female</option> -->
                                 </select>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
                                 required="" placeholder="your current address">
                         </div>
 
-                        <div class="form-row">
+                        <!-- <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
                                     <label for="hobby">Hobby(optional)</label>
@@ -168,7 +168,7 @@
                                         required="" placeholder="1214">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-row">
                             <div class="col-md-6">
@@ -227,13 +227,24 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="spouse_profession">Spouse Profession(optional)</label>
-                                    <input type="text" class="form-control" id="spouse_profession"
-                                        placeholder=" Teacher" name="spouse_profession">
+                            <div class="form-group">
+                                    <label for="t_shirt">Your T-Shirt Size <span
+                                        class="badge badge-danger">required</span></label>
+                                    <select class="form-control" id="t_shirt" name="t_shirt" required="">
+                                        <option value="">Select Size</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                        <option value="XXXL">XXXL</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
+                        
+                        
+                        
 
                         <div class="form-group">
                             <label for="image">Image (Max size 1MB)  <span
@@ -250,16 +261,40 @@
 
                         <strong>Participation Details</strong>
                         <hr>
-                        <p>Total amount to pay: <strong><span id="totalamount"></span> Taka</strong> <span
-                                id="discount_text"></span></p>
+                        <p>Participation Fee: <strong>1000 Taka</strong> 
+                            <span
+                                    id="discount_text">
+                            </span>
+                        </p>
+                        <p>Total amount to pay: <strong><span id="totalamount"></span> Taka</strong> 
+                            <span
+                                    id="discount_text">
+                            </span>
+                        </p>
 
-                        <strong>9<sup>th</sup> December 2022</strong>
+                        <strong>10<sup>th</sup> March 2023</strong>
 
-
+                        <div class="form-group">
+                            {{-- Total: <strong><span id="totalamountonline">1000</span> Taka (Online)(includes 2.5% gateway charge)</strong> <br> --}}
+                            <input type="hidden" id="totalamountToPay" name="total_amount" value="1000">
+                            <input type="hidden" id="" name="added_by" value="self">
+                        </div>
                         <div class="form-row">
+                        
                             <div class="col-md-6">
+                                
                                 <div class="form-group">
-                                    <label for="d1la">Lunch(@300tk/person) <span
+                                    <!-- hidden input for d1la -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="d1da" id="d1da" value="0">
+                                        <label for="d1da"  class="form-check-label" >
+                                            Driver's Dinner(@300tk)
+                                        </label>
+                                        <input for="d1da" type="hidden" name="d1da" id = "d1da" value="1">
+                                    </div>
+                                    <input type="hidden" id="d1la" name="d1la" value="0">
+ 
+                                    <!-- <label for="d1la">Dinner(@300tk/person) <span
                                             class="badge badge-danger">required</span></label>
                                     <select class="form-control" id="d1la" name="d1la" required="">
                                         <option value="">Select Quantity</option>
@@ -274,18 +309,19 @@
                                         <option value="8">8</option>
                                         <option value="9">9</option>
                                         <option value="10">10</option>
-                                    </select>
+                                    </select> -->
                                 </div>
                             </div>
+                            
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="d1da">Dinner(@300tk/Box) <span
-                                        class="badge badge-danger">required</span></label>
-                                    <select class="form-control" id="d1da" name="d1da" required="">
-                                        <option value="">Select Quantity</option>
+                                   
+                                    
+                                    <!-- <select class="form-control" id="d1da" name="d1da" required="">
+                                        <option value="0">Select Quantity</option>
                                         <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
+                                        <option value="1">1</option> -->
+                                        <!-- <option value="2">2</option>
                                         <option value="3">3</option>
                                         <option value="4">4</option>
                                         <option value="5">5</option>
@@ -293,57 +329,16 @@
                                         <option value="7">7</option>
                                         <option value="8">8</option>
                                         <option value="9">9</option>
-                                        <option value="10">10</option>
-                                    </select>
+                                        <option value="10">10</option> -->
+                                    <!-- </select> -->
                                 </div>
                             </div>
                         </div>
 
-                        {{-- <strong>15<sup>th</sup>February 2019 (Day 02)</strong>
+                        
 
                         <div class="form-row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="d2la">Lunch(@300tk/Box)</label>
-                                    <select class="form-control" id="d2la" name="d2la" required="">
-                                        <option value="">Select Quantity</option>
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="d2da">Grand Dinner(@700tk/Person)</label>
-                                    <select class="form-control" id="d2da" name="d2da" required="">
-                                        <option value="">Select Quantity</option>
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div> --}}
-
-                        <div class="form-row">
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="d2dda">Driver's Dinner(@300tk/Box) <span
                                         class="badge badge-danger">required</span></label>
@@ -362,8 +357,8 @@
                                         <option value="10">10</option>
                                     </select>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
+                            </div> -->
+                            <!-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="t_shirt">T-Shirt Size <span
                                         class="badge badge-danger">required</span></label>
@@ -377,15 +372,11 @@
                                         <option value="XXXL">XXXL</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <br>
-                        <div class="form-group">
-                            {{-- Total: <strong><span id="totalamountonline">1000</span> Taka (Online)(includes 2.5% gateway charge)</strong> <br> --}}
-                            <input type="hidden" id="totalamountToPay" name="total_amount" value="1000">
-                            <input type="hidden" id="" name="added_by" value="self">
-                        </div>
+                        
 
                         <h4>Select Payment Method</h4>
 
@@ -419,8 +410,11 @@
 
 
                         <br>
+
                         <div class="form-group">
-                            <input type="submit" id="from_submit" value="Pay and Confirm" class="btn sbh_btn">
+                            <!-- disable the submit button -->
+
+                            <input  type="submit" id="from_submit" value="Pay and Confirm" class="btn sbh_btn" >
                         </div>
 
                     </form>
@@ -442,13 +436,31 @@
             // function totalPayable(){var a=($("#passing_year").val()/100)*(1e3+100*$("#d1la").val()+300*$("#d1da").val()+300*$("#d2la").val()+700*$("#d2da").val()+300*$("#d2dda").val());$("input[name='payment_method']:checked").val();$("#totalamount").text(a),$("#totalamountToPay").val(a)}
             // function roundNumber(a,e){if((""+a).includes("e")){var t=(""+a).split("e"),n="";return+t[1]+e>0&&(n="+"),+(Math.round(+t[0]+"e"+n+(+t[1]+e))+"e-"+e)}return+(Math.round(a+"e+"+e)+"e-"+e)}$("#attachment").on("change",function(){"resident"===$(this).val()?$("#Room,#Hall_Duration").show():$("#Room,#Hall_Duration").hide()}),totalPayable(),$("#d1la,#passing_year,#d1da, #d2la, #d2da, #d2dda").on("change",function(){totalPayable()}),$("#image").bind("change",function(){roundNumber(this.files[0].size/1024/1024,2)>2?$("#imagesize").html('<span class="sbh_bg">File size Exceeds 2 MB<br> Please choose a file under 2MB</span>'):$("#imagesize").html('<span class="sbh_bg">Image is ok to be uploaded</span>')});
             //   $("#contact").on("blur",function(){var t=$(this).val(),a=$('meta[name="csrf-token"]').attr("content");$.ajax({url:'',type:"POST",data:{mobile_number:t,_token:a},dataType:"json",success:function(t){"ok"==t.message?($("#from_submit").removeAttr("disabled"),$("#mobileValidation").hide()):($("#from_submit").attr("disabled","disabled"),$("#mobileValidation").html('<span class="sbh_bg">'+t.message+"</span>").show())}})});
-
+            
+            
             function totalPayable() {
-                var a = checkGraduationYear() / 100 * (1e3 + 300 * $("#d1la").val() + 300 * $("#d1da").val() + 300 *
-                    $("#d2dda").val());
+                var a = checkGraduationYear() / 100 * (1e3 + 300 * $("#d1la").val() + 300 * $("#d1da").val() );
                 $("input[name='payment_method']:checked").val(), $("#totalamount").text(a), $("#totalamountToPay")
                     .val(a), console.log(a)
             }
+            const checkbox = document.getElementById('d1da');
+            const hiddenInput = document.querySelector('input[name="d1da"][type="hidden"]');
+
+            checkbox.addEventListener('change', (event) => {
+                if (event.target.checked) {
+                    // hiddenInput.value = 1;
+                    // change d1da value to 1
+                    $("#d1da").val(1);
+                } else {
+                    // hiddenInput.value = 0;
+                    // change d1da value to 0
+                    $("#d1da").val(0);
+                }
+                console.log("checkbox changed");
+                console.log(hiddenInput.value);
+                // update total amount
+                totalPayable();
+            });
 
             function checkGraduationYear() {
                 return 100;
@@ -472,8 +484,16 @@
                 }), $("#attachment").on("change", function() {
                     "resident" === $(this).val() ? $("#Room,#Hall_Duration").show() : $("#Room,#Hall_Duration")
                         .hide()
-                }), totalPayable(), $("#d1la,#d1da, #d2la, #d2da, #d2dda").on("change", function() {
+                }), totalPayable(), 
+                
+                $("#d1la,#d1da, #d2la, #d2da, #d2dda").on("change", function() {
                     totalPayable()
+                }),
+                $("#d1da").on("change", function() {
+                    console.log("d1da changed");
+                    // show me the d1da value
+                    console.log($("#d1da").val());
+                    totalPayable();
                 }),
 
 
@@ -516,6 +536,23 @@
 
         });
     </script>
+    // <script>
+        // for driver dinner form
+    //     const checkbox = document.getElementById('d1da');
+    //         const hiddenInput = document.querySelector('input[name="d1da"][type="hidden"]');
+
+    //         checkbox.addEventListener('change', (event) => {
+    //             if (event.target.checked) {
+    //                 hiddenInput.value = 1;
+    //             } else {
+    //                 hiddenInput.value = 0;
+    //             }
+    //             console.log("checkbox changed");
+    //             console.log(hiddenInput.value);
+    //             // update total amount
+    //             totalPayable();
+    //         });
+    // </script>
 
 </body>
 

@@ -167,7 +167,7 @@ class SslCommerzPaymentController extends Controller
         $amount = $request->input('amount');
         $currency = $request->input('currency');
 
-        $sslc = new SslCommerzNotification();
+        // $sslc = new SslCommerzNotification();
 
         #Check order status in order tabel against the transaction id or order id.
         $order_detials = DB::table('orders')

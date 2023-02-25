@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>SBH Reunion 2022</title>
+    <title>RH Reunion 2023</title>
 
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -62,7 +62,7 @@
 
     <nav class="navbar navbar-expand-lg nav_area fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('index') }}">SBH</a>
+            <a class="navbar-brand" href="{{ route('index') }}">RH</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
                 aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -72,6 +72,9 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item ">
                         <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{ route('ec') }}">EC<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
@@ -106,8 +109,8 @@
             <div class="row h-100 text-center align-items-center">
                 <div class="col-lg-12">
                     <div class="hero_txt">
-                        <h1>reunion 2022<span>Sher-e-bangla Hall</span></h1>
-                        <span class="date">09 December 2022</span>
+                        <h1>reunion 2023<span>Dr. M A Rashid Hall(BUET)</span></h1>
+                        <span class="date">10th March 2023</span>
                         <br>
                         <a href="{{ route('registerform') }}" class="sbh_btn hero_btn main_hero_btn mb-3">Alumni
                             REGISTRATION</a>
@@ -131,12 +134,13 @@
                                 during off days, please contact these numbers.</p>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <p>Shahnewaz Munshi</p>
-                                    <p>01635 258 989</p>
+                                    <p>Mr. Iftekhar </p>
+                                    <p>016xx xxx xxx</p>
                                 </div>
                                 <div class="col-sm-6">
-                                    <p>Zahidul Islam</p>
-                                    <p>01766 158 705</p>
+                                    <p>Mr.  Iftekhar</p>
+                                    <!-- <p>01728309913</p> -->
+                                    <p>017xxxxxxx</p>
                                 </div>
                             </div>
 
@@ -195,47 +199,41 @@
                     <div class="event_card">
 
                         <ul class="list-group">
-                            <li class="list-group-item header_date">09 December 2022</li>
+                            <li class="list-group-item header_date">09 March 2023</li>
                             <li class="list-group-item ">
                                 <span class="title">Reunion souvenir & cupon distribution, Spot registration</span> at
                                 <span>Hall Compound</span>
-                                <span class="time float-right">9:00 am - 8:00 pm</span>
+                                <span class="time float-right">2:30 pm - 3:30 pm</span>
                             </li>
+                            <li class="list-group-item ">
+                                <span class="title">Annual General Meeting</span> at
+                                <span>Hall Compound</span>
+                                <span class="time float-right">3:31 pm - 4:30 pm</span>
+                            </li>
+                            
                             <li class="list-group-item ">
                                 <span class="title">Cake, Tea time, Sports event & Hall visit</span> at
                                 <span>Hall Compound</span>
-                                <span class="time float-right">09:00 am - 12:00 pm</span>
+                                <span class="time float-right">04:31 am - 6:00 pm</span>
                             </li>
                             <li class="list-group-item ">
-                                <span class="title">Hall Dining Lunch</span> at
-                                <span>Dining & Canteen</span>
-                                <span class="time float-right">01:00 pm - 02:30 pm</span>
-                            </li>
-                            <li class="list-group-item ">
-                                <span class="title">Grand Opening of jubilee Reunion</span> at
-                                <span>Central Auditorium</span>
-                                <span class="time float-right">03:00 pm - 05:00 pm</span>
-                            </li>
-                            <li class="list-group-item ">
-                                <span class="title">Tea time, Fireworks, meeting</span> at
-                                <span>Central Auditorium</span>
-                                <span class="time float-right">05:00 pm- 06:30 pm</span>
-                            </li>
-                            <li class="list-group-item ">
-                                <span class="title">Reminiscence</span> at
-                                <span>Central Auditorium</span>
+                                <span class="title">Recitation of The Holy Quran, Reminiscence, Welcome Remarks </span> at
+                                <span>Hall Compound</span>
                                 <span class="time float-right">06:00 pm - 07:30 pm</span>
+                            </li>
+                            
+                            
+                            <li class="list-group-item ">
+                                <span class="title">Dinner</span> at
+                                <span>Hall Compound</span>
+                                <span class="time float-right">07:31 pm - 9:00 pm</span>
                             </li>
                             <li class="list-group-item ">
                                 <span class="title">Cultural function</span> at
-                                <span>Central Auditorium</span>
-                                <span class="time float-right">07:30 pm - 08:30 pm</span>
+                                <span>Gymnasium</span>
+                                <span class="time float-right">09:00 pm - 10:30 pm</span>
                             </li>
-                            <li class="list-group-item ">
-                                <span class="title">Dinner</span> at
-                                <span>Central Cafeteria</span>
-                                <span class="time float-right">08:45 pm</span>
-                            </li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -305,9 +303,9 @@
                     <div class="left_content">
                         <h2>Get in Touch</h2>
                         <ul>
-                            <li><i class="fas fa-phone"></i>+880 1641 002 002</li>
-                            <li><i class="fas fa-at"></i>sbhaa.buet@gmail.com</li>
-                            <li><i class="fas fa-home"></i>Sher-E-Bangla Hall, BUET, Dhaka - 1000</li>
+                            <li><i class="fas fa-phone"></i>+880 16xx xxx xxx</li>
+                            <li><i class="fas fa-at"></i>rh.reunion2023@gmail.com</li>
+                            <li><i class="fas fa-home"></i>Dr. M A Rashid Hall, BUET, Dhaka - 1000</li>
                         </ul>
                     </div>
                 </div>
@@ -322,14 +320,15 @@
                         <textarea placeholder="Message" id="message" name="message" required></textarea>
                         <span id="messageError" class="label label-danger"></span>
                         <input type="submit" name="submit" id="submit" value="Send Message" class="sbh_btn"
-                            disabled="">
+                            >
                     </form>
                     <div id="messageStatus"></div>
                 </div>
                 <div class="mb-5"></div>
                 <div class="col-12 text-center text-muted mini_footer">
-                    &copy; all rights reserved SBH-2018 || Developed BY <a target="_blank"
-                        href="https://www.facebook.com/monzurul.islam1112">Monzurul Islam</a>
+                    &copy; all rights reserved RH-2023 
+                    || Developed BY <a target="_blank"
+                        href="https://www.linkedin.com/in/md-arafat-hossain-138a5a206/">Arafat Hossain</a>
                 </div>
             </div>
         </div>
@@ -345,7 +344,7 @@
     <script type="text/javascript" src="{{ asset('user/js/main.js') }}"></script>
     <script type="text/javascript">
         //year/month/day
-        $("#clock").countdown("2022/12/09 00:00:00").on("update.countdown", function(s) {
+        $("#clock").countdown("2023/03/10 00:00:00").on("update.countdown", function(s) {
             $(this).html(s.strftime(
                 '<div class="wrapper"><span class="time">%-D</span><br>day%!D</div><span class="slash">/</span><div class="wrapper"><span class="time">%H</span><br>hours</div><span class="slash">/</span><div class="wrapper"><span class="time">%M</span><br>minutes</div><span class="slash">/</span><div class="wrapper"><span class="time">%S</span><br>seconds</div>'
                 ))
@@ -428,7 +427,14 @@
                         this.reset(), $("#nameError").hide(), $("#emailError").hide()
                     }), $("#contactForm").hide(500), $("#messageStatus").text(
                         "Message sent successfully").show(500))
+                },
+                error: function(e) {
+                    console.log("could not post the data")
+                    console.log(e)
+                    // what to do if error
+
                 }
+                
             })
         });
     </script>
@@ -436,3 +442,6 @@
 </body>
 
 </html>
+
+
+

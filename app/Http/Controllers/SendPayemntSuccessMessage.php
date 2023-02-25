@@ -55,7 +55,7 @@ class SendPayemntSuccessMessage extends Controller
 
     public function sendSms($data){
 
-        $message  = $data->name.', your SBHAA Program Registration has been completed';
+        $message  = $data->name.', your RH Program Registration has been completed';
         $message .= '.%0aYour Application ID is: '.$data->order_id;
         $message .= '.%0aAmount received: '.$data->total_amount;
         $message .= '.%0aPayment method: '.$data->payment_method;

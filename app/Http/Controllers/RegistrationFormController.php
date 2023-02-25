@@ -39,7 +39,7 @@ class RegistrationFormController extends Controller
 
 
     public function unique_order_id(){
-        $prefix = 'SBH';
+        $prefix = 'RH';
         $rand = strtoupper(substr(uniqid(sha1(time())),0,8));
         //return $temp = $prefix.$rand;
         //generates the order id
@@ -80,16 +80,16 @@ class RegistrationFormController extends Controller
             $reg_data->order_id          = $order_id;
             $reg_data->order_status      = 'Pending';
             $reg_data->department        = $request->department;
-            $reg_data->exam_session      = $request->exam_session;
+            $reg_data->exam_session      = $request->entrance_batch;
             $reg_data->graduation_year   = $request->graduation_year;
             $reg_data->attachment        = $request->attachment;
             $reg_data->room_no           = $request->room_no;
             $reg_data->hall_duration     = $request->hall_duration;
             $reg_data->birthdate         = $request->birthdate;
-            $reg_data->gender            = $request->gender;
+            $reg_data->gender            = 'male';
             $reg_data->present_address   = $request->present_address;
             $reg_data->hobby             = $request->hobby;
-            $reg_data->postcode          = $request->postcode;
+            $reg_data->postcode          = 1000;
             $reg_data->mobile_1          = $this->getDigitedNumber($request->mobile_1);
             $reg_data->mobile_2          = $request->mobile_2;
             $reg_data->email             = $request->email;
@@ -97,12 +97,16 @@ class RegistrationFormController extends Controller
             $reg_data->position          = $request->position;
             $reg_data->organization      = $request->organization;
             $reg_data->spouse_name       = $request->spouse_name;
-            $reg_data->spouse_profession = $request->spouse_profession;
-            $reg_data->d1la              = $request->d1la;
-            $reg_data->d1da              = $request->d1da;
+            // $reg_data->spouse_profession = $request->spouse_profession;
+            // $reg_data->d1la              = $request->d1la;
+            $reg_data->d1la              = 0;
+            // $reg_data->d1da              = $request->d1da;
+            $reg_data->d1da              = 1; //as per client request
             $reg_data->d2la              = $request->d2la;
             $reg_data->d2da              = $request->d2da;
-            $reg_data->driver            = $request->driver;
+            // $reg_data->driver            = 1;
+            $reg_data->driver            = $request->d1da; //  as per client request
+
             $reg_data->t_shirt           = $request->t_shirt;
             $reg_data->total_amount      = $request->total_amount;
             $reg_data->added_by          = $request->added_by;

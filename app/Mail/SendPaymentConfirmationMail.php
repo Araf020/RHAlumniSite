@@ -29,8 +29,8 @@ class SendPaymentConfirmationMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('[SBHAA] Payment Confirmation')
-                    ->replyTo('sbhaa.buet@gmail.com')
+        return $this->subject('[RH] Payment Confirmation')
+                    // ->replyTo('sbhaa.buet@gmail.com')
                     ->view('email.paymentConfirm');
     }
 }

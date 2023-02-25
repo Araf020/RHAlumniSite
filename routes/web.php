@@ -19,6 +19,11 @@ use Illuminate\Support\Facades\Artisan;
 
 Route::get('/','PagesController@home')->name('index');
 Route::post('/saveContactSubmission','PagesController@contact')->name('saveContactSubmission');
+Route::get('ec','PagesController@ec')->name('ec');
+Route::get('smail','PagesController@smail')->name('smail');
+Route::post('sendmail','PagesController@sendmail')->name('sendmail');
+
+Route::get('regconfirm','PagesController@regconfirm')->name('regconfirm');
 
 
 
@@ -90,7 +95,7 @@ Route::post('validateEmail','CurrentStudentController@validateEmail')->name('val
 Route::post('validatePhone','CurrentStudentController@validatePhone')->name('validatePhone');
 
 Route::get('/pay', 'PublicSslCommerzPaymentController@index')->name('pay');
-Route::POST('/success', 'PublicSslCommerzPaymentController@success');
+Route::POST('/success', 'PublicSslCommerzPaymentController@success')->name('success');
 Route::POST('/fail', 'PublicSslCommerzPaymentController@fail');
 Route::POST('/cancel', 'PublicSslCommerzPaymentController@cancel');
 Route::POST('/ipn', 'PublicSslCommerzPaymentController@ipn');
